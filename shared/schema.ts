@@ -46,6 +46,9 @@ export const loanApplications = pgTable("loan_applications", {
   amount: decimal("amount", { precision: 12, scale: 2 }).notNull(),
   tenure: integer("tenure").notNull(), // in months
   purpose: varchar("purpose").notNull(),
+  businessRevenue: decimal("business_revenue", { precision: 12, scale: 2 }),
+  businessType: varchar("business_type"),
+  employeeCount: integer("employee_count"),
   status: varchar("status").default("draft"), // draft, submitted, approved, rejected, disbursed
   currentStep: integer("current_step").default(1),
   documents: jsonb("documents").default([]), // array of document URLs

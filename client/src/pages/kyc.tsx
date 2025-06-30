@@ -1,4 +1,5 @@
 import { useAuth } from "@/hooks/useAuth";
+import { BackButton } from "@/components/ui/back-button";
 import { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -229,6 +230,7 @@ export default function KycPage() {
   return (
     <div className="min-h-screen bg-slate-50 p-4 lg:p-6">
       <div className="max-w-4xl mx-auto">
+        <BackButton to="/">Back to Dashboard</BackButton>
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-slate-900">KYC Verification</h1>

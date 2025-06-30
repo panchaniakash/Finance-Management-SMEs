@@ -18,6 +18,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { isUnauthorizedError } from "@/lib/authUtils";
 import { format, addDays } from "date-fns";
+import { BackButton } from "@/components/ui/back-button";
 
 const invoiceItemSchema = z.object({
   description: z.string().min(1, "Description is required"),
@@ -310,6 +311,7 @@ export default function InvoicesPage() {
   return (
     <div className="min-h-screen bg-slate-50 p-4 lg:p-6">
       <div className="max-w-7xl mx-auto">
+        <BackButton to="/">Back to Dashboard</BackButton>
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>

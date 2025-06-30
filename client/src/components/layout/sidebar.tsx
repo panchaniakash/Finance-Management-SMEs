@@ -17,7 +17,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { name: "Dashboard", href: "/", icon: Home },
     { name: "KYC Verification", href: "/kyc", icon: Shield },
     { name: "Invoices", href: "/invoices", icon: FileText },
-    { name: "Loans", href: "#", icon: CreditCard },
+    { name: "Loans", href: "/loans", icon: CreditCard },
     { name: "Payments", href: "#", icon: Building2 },
     { name: "GST & Tax", href: "#", icon: Receipt },
   ];
