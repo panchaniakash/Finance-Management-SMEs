@@ -1,0 +1,94 @@
+You are a senior UI/UX architect tasked with designing a clean, professional dashboard for an SME‑focused FinTech web application. Deliver a full UX plan plus low‑fi wireframes that cover both our Stage 1 MVP blueprint and the Stage 2 Sprint 1 development scope.
+
+───
+
+## 1. CORE SCREENS (Stage 1)
+
+1. **Login & Signup**  
+   - Email + mobile OTP flows  
+   - KYC status indicator (Pending, Verified, Rejected)  
+   - “Resend OTP” and “Help” links  
+
+2. **Loan Application**  
+   - Step‑by‑step form: Amount, Tenure, Purpose, Document uploads (PDF/image)  
+   - Progress tracker (e.g. Step 1 of 3)  
+   - “Save & Continue Later” option  
+   - Inline validations & error states  
+
+3. **Invoice Dashboard**  
+   - Table of invoices (ID, Date, Amount, Status) with sorting & filters  
+   - Quick‑action buttons: “New Invoice,” “Export CSV”  
+   - Summary cards: Total Due, Overdue, Paid This Month  
+
+4. **UPI Payments**  
+   - “Generate Payment Link” & “Show QR Code” modal  
+   - Copy & share actions (WhatsApp, Email)  
+   - Real‑time payment status indicator  
+
+5. **GST Overview**  
+   - Upcoming filing dates calendar view + list view  
+   - Alerts for due/overdue filings with CTA “File Now”  
+   - Past filings log with download links  
+
+───
+
+## 2. SPRINT 1 DEV FLOWS (Stage 2)
+
+6. **User Onboarding Flow**  
+   - Welcome screen → Email/mobile entry → OTP verification → Success/Failure states  
+   - Error handling (invalid OTP, rate‑limit warnings)  
+
+7. **KYC Upload & Verification**  
+   - Document upload UI (drag‑and‑drop or file picker for PAN, address proof)  
+   - Preview thumbnail, “Remove” & “Re‑upload” actions  
+   - Status badge (“Pending Review,” “Verified,” “Rejected”)  
+
+8. **SME Dashboard (Shell)**  
+   - High‑level overview cards: Onboarded Businesses, Pending KYC, Active Loans, Transactions Today  
+   - Left nav with sections: Dashboard, Invoices, Loans, Payments, GST  
+   - Placeholder widget for future AI‑driven credit insights  
+
+9. **Loan Application Form (Detailed)**  
+   - Embedded within dashboard shell  
+   - Form fields + document attachments  
+   - Confirmation screen on “Submit”  
+
+10. **UPI Payment Creation**  
+    - Button within loan/invoice view: “Request Payment”  
+    - Modal for payment details: amount prefilled, “Generate Link”  
+    - Show link & QR side‑by‑side, with “Copy” and “Share” icons  
+
+───
+
+## DELIVERABLES
+
+- **Style Guide:**  
+  - Primary & secondary color palette (finance‑trustworthy)  
+  - Typography scale & weights  
+  - Spacing system & grid guidelines  
+  - Iconography style  
+
+- **Component Library Sketch:**  
+  - Buttons (primary, secondary, disabled)  
+  - Form fields (text, number, file upload, OTP input)  
+  - Tables & cards (invoice table, summary cards)  
+  - Modals & notifications (toasts, error banners)  
+
+- **User‑Flow Diagrams:**  
+  - Login → Onboarding → KYC → Dashboard  
+  - Dashboard → Loan Application → Confirmation  
+  - Invoice List → UPI Payment Modal → Confirmation  
+
+- **Low‑Fidelity Wireframes:**  
+  - Desktop (1440px) & tablet (768px) layouts for all ten screens above  
+
+- **Responsive Notes & Annotations:**  
+  - How side nav collapses on tablet/mobile  
+  - Behavior of modals & tables at smaller breakpoints  
+
+- **Developer Annotations:**  
+  - Placeholder text for API calls (e.g., `POST /api/verify-otp`)  
+  - Error & loading states to support backend integration  
+  - Guidelines on component variants tied to our React/TypeScript + Tailwind stack  
+
+Focus on minimalism, clarity, and fast developer handoff. Ensure each screen and flow is annotated with actionable notes so our Stage 2 dev sprint can begin the very next day.  
