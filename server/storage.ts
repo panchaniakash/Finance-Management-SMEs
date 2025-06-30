@@ -130,28 +130,26 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getInvoicesByUser(userId: string, filters?: { status?: string; search?: string }): Promise<Invoice[]> {
-    let query = db
-      .select()
-      .from(invoices)
-      .where(eq(invoices.userId, userId));
+    let whereConditions = [eq(invoices.userId, userId)];
 
     if (filters?.status && filters.status !== "all") {
-      query = query.where(and(eq(invoices.userId, userId), eq(invoices.status, filters.status)));
+      whereConditions.push(eq(invoices.status, filters.status));
     }
 
     if (filters?.search) {
-      query = query.where(
-        and(
-          eq(invoices.userId, userId),
-          or(
-            ilike(invoices.invoiceNumber, `%${filters.search}%`),
-            ilike(invoices.clientName, `%${filters.search}%`)
-          )
-        )
+      whereConditions.push(
+        or(
+          ilike(invoices.invoiceNumber, `%${filters.search}%`),
+          ilike(invoices.clientName, `%${filters.search}%`)
+        )!
       );
     }
 
-    return await query.orderBy(desc(invoices.createdAt));
+    return await db
+      .select()
+      .from(invoices)
+      .where(and(...whereConditions))
+      .orderBy(desc(invoices.createdAt));
   }
 
   async updateInvoice(id: number, invoice: Partial<InsertInvoice>): Promise<Invoice> {
