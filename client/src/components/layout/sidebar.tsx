@@ -16,7 +16,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const navigation = [
     { name: "Dashboard", href: "/", icon: Home },
     { name: "KYC Verification", href: "/kyc", icon: Shield },
-    { name: "Invoices", href: "#", icon: FileText },
+    { name: "Invoices", href: "/invoices", icon: FileText },
     { name: "Loans", href: "#", icon: CreditCard },
     { name: "Payments", href: "#", icon: Building2 },
     { name: "GST & Tax", href: "#", icon: Receipt },

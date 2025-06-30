@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import Dashboard from "@/pages/dashboard";
 import Landing from "@/pages/landing";
 import KycPage from "@/pages/kyc";
+import InvoicesPage from "@/pages/invoices";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
         <>
           <Route path="/" component={Dashboard} />
           <Route path="/kyc" component={KycPage} />
+          <Route path="/invoices" component={InvoicesPage} />
         </>
       )}
       <Route component={NotFound} />

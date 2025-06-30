@@ -59,10 +59,17 @@ export const invoices = pgTable("invoices", {
   userId: varchar("user_id").notNull().references(() => users.id),
   invoiceNumber: varchar("invoice_number").notNull().unique(),
   clientName: varchar("client_name").notNull(),
+  clientEmail: varchar("client_email"),
+  clientAddress: text("client_address"),
   amount: decimal("amount", { precision: 12, scale: 2 }).notNull(),
+  subtotal: decimal("subtotal", { precision: 12, scale: 2 }).default("0"),
+  taxRate: decimal("tax_rate", { precision: 5, scale: 2 }).default("0"),
+  taxAmount: decimal("tax_amount", { precision: 12, scale: 2 }).default("0"),
   status: varchar("status").default("pending"), // pending, paid, overdue
   dueDate: date("due_date").notNull(),
   description: text("description"),
+  items: jsonb("items").default([]), // array of invoice items
+  notes: text("notes"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
